@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Resources;
 
 namespace Fil_mOK
 {
@@ -30,7 +31,12 @@ namespace Fil_mOK
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            //pictureBox1.ImageLocation = "C:\\Users\\home\\Pictures\\1 мая\\DSC_4112.JPG";
+            pictureBox1.Image = Bitmap.FromFile("doctor.jpg");
+            //label4.Text = 
+            pictureBox2.Image = Bitmap.FromFile("forsazh.jpg");
+            pictureBox3.Image = Bitmap.FromFile("passangers.jpg");
+            pictureBox4.Image = Bitmap.FromFile("elki.jpg");
+            
         }
 
         public void label1_Click(object sender, EventArgs e)
