@@ -32,11 +32,13 @@ namespace Fil_mOK
         private void Form2_Load(object sender, EventArgs e)
         {
             pictureBox1.Image = Bitmap.FromFile("doctor.jpg");
-            //label4.Text = 
+            label4.Text = filmTableAdapter.GetData().FindById(1).FDiscription;
             pictureBox2.Image = Bitmap.FromFile("forsazh.jpg");
+            label5.Text = filmTableAdapter.GetData().FindById(2).FDiscription;
             pictureBox3.Image = Bitmap.FromFile("passangers.jpg");
+            label9.Text = filmTableAdapter.GetData().FindById(3).FDiscription;
             pictureBox4.Image = Bitmap.FromFile("elki.jpg");
-            
+            label13.Text = filmTableAdapter.GetData().FindById(4).FDiscription;            
         }
 
         public void label1_Click(object sender, EventArgs e)
@@ -45,30 +47,35 @@ namespace Fil_mOK
             f4.ShowDialog();
         }
 
-        public void label2_Click(object sender, EventArgs e)
-        {
-            room f4 = new room(sender, e);
-            f4.ShowDialog();
-        }
-
         private void label1_MouseMove(object sender, MouseEventArgs e)
         {
-            label1.BackColor = Color.LightGray;
+            (sender as Label).BackColor = Color.LightGray;
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
-            label1.BackColor = label2.BackColor;
+            (sender as Label).BackColor = this.BackColor;
         }
 
-        private void label2_MouseMove(object sender, MouseEventArgs e)
+        private void ‚˚ÈÚËToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            label2.BackColor = Color.LightGray;
-        }
-
-        private void label2_MouseLeave(object sender, EventArgs e)
-        {
-            label2.BackColor = label1.BackColor;
+            ‚ÓÈÚËToolStripMenuItem.Visible = true;
+            Â‰‡ÍÚÓToolStripMenuItem.Visible = false;
+            ‚˚ÈÚËToolStripMenuItem.Visible = false;
+            Welcome.Visible = false;
+            foreach (var cntrl in this.Controls)
+            {
+                if (cntrl is Panel)
+                {
+                    foreach (var label in (cntrl as Panel).Controls)
+                    {
+                        if ((label is Label) )
+                        {
+                            (label as Label).Enabled = false;
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -21,9 +21,21 @@ namespace Fil_mOK
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "bDFilmDataSet.Film". При необходимости она может быть перемещена или удалена.
             this.filmTableAdapter.Fill(this.bDFilmDataSet.Film);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "bDFilmDataSet.Film". При необходимости она может быть перемещена или удалена.
+            this.filmTableAdapter.Fill(this.bDFilmDataSet.Film);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "bDFilmDataSet.Film". При необходимости она может быть перемещена или удалена.
+            this.filmTableAdapter.Fill(this.bDFilmDataSet.Film);
             
         }
         private void filmBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.filmBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.bDFilmDataSet);
+
+        }
+
+        private void filmBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             this.Validate();
             this.filmBindingSource.EndEdit();

@@ -19,21 +19,18 @@ namespace Fil_mOK
 
         public void button1_Click(object sender, EventArgs e)
         {
-                //string index = this.tableAdapterManager.UsersTableAdapter.IdbyLog(this.textBox1.Text, this.maskedTextBox1.Text).ToString();
                 if (this.tableAdapterManager.UsersTableAdapter.IdbyLog(this.textBox1.Text, this.maskedTextBox1.Text) != null)
                 {
                     MessageBox.Show("Добро пожаловать, " + this.textBox1.Text + "!", "Регистрация успешна!", MessageBoxButtons.OK);
                     Form2 f2 = this.Owner as Form2;
-                    //f2.menuStrip1.Visible = false;
                     f2.Welcome.Text = this.textBox1.Text + " | В сети";
                     f2.Welcome.Location = new Point(0, 0);
-                    // f2.Welcome.Visible = true;
                     f2.Welcome.Show();
                     f2.войтиToolStripMenuItem.Visible = false;
-                    f2.label1.Enabled = true;
-                    f2.label2.Enabled = true;
-
-                   /* if (this.bDFilmDataSet.Users.FindById((int)this.tableAdapterManager.UsersTableAdapter.IdbyLog(this.textBox1.Text, this.maskedTextBox1.Text)).Key)
+                    f2.выйтиToolStripMenuItem.Visible = true;
+                    //f2.label1.Enabled = true;
+                    //f2.label2.Enabled = true;
+                    if (this.bDFilmDataSet.Users.FindById((int)this.tableAdapterManager.UsersTableAdapter.IdbyLog(this.textBox1.Text, this.maskedTextBox1.Text)).Key)
                     {
                         f2.редакторToolStripMenuItem.Visible = true;
                     }
@@ -41,8 +38,19 @@ namespace Fil_mOK
                     {
                         f2.редакторToolStripMenuItem.Visible = false;
                     }
-                    */
-
+                    foreach (var cntrl in f2.Controls)
+                    {
+                        if (cntrl is Panel)
+                        {
+                            foreach (var label in (cntrl as Panel).Controls)
+                            {
+                                if (label is Label)
+                                {
+                                    (label as Label).Enabled = true;
+                                }
+                            }
+                        }
+                    }
                     Close();
                 }
                 else
@@ -65,5 +73,6 @@ namespace Fil_mOK
         {
             this.usersTableAdapter.Fill(this.bDFilmDataSet.Users);
         }
+
     }
 }

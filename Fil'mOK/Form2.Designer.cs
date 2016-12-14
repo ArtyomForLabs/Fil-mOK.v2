@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.войтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редакторToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,10 +40,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bDFilmDataSet2 = new Fil_mOK.BDFilmDataSet2();
+            this.bDFilmDataSet = new Fil_mOK.BDFilmDataSet();
             this.filmBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.filmTableAdapter = new Fil_mOK.BDFilmDataSet2TableAdapters.FilmTableAdapter();
-            this.tableAdapterManager = new Fil_mOK.BDFilmDataSet2TableAdapters.TableAdapterManager();
+            this.filmTableAdapter = new Fil_mOK.BDFilmDataSetTableAdapters.FilmTableAdapter();
+            this.tableAdapterManager = new Fil_mOK.BDFilmDataSetTableAdapters.TableAdapterManager();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,7 +64,7 @@
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDFilmDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDFilmDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.filmBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -79,11 +80,12 @@
             this.menuStrip1.BackColor = System.Drawing.Color.Yellow;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.войтиToolStripMenuItem,
+            this.выйтиToolStripMenuItem,
             this.редакторToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(340, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(364, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -95,10 +97,23 @@
             this.войтиToolStripMenuItem.Text = "Войти";
             this.войтиToolStripMenuItem.Click += new System.EventHandler(this.войтиToolStripMenuItem_Click);
             // 
+            // выйтиToolStripMenuItem
+            // 
+            this.выйтиToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.выйтиToolStripMenuItem.BackColor = System.Drawing.Color.Khaki;
+            this.выйтиToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
+            this.выйтиToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.выйтиToolStripMenuItem.Text = "Выйти";
+            this.выйтиToolStripMenuItem.Visible = false;
+            this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
+            // 
             // редакторToolStripMenuItem
             // 
             this.редакторToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.редакторToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.редакторToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.редакторToolStripMenuItem.Name = "редакторToolStripMenuItem";
             this.редакторToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.редакторToolStripMenuItem.Text = "Редактор";
@@ -115,6 +130,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 15);
             this.label1.TabIndex = 2;
+            this.label1.Tag = "time";
             this.label1.Text = "14:10";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
@@ -129,10 +145,11 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 15);
             this.label2.TabIndex = 3;
+            this.label2.Tag = "time";
             this.label2.Text = "23:30";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
-            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label2_MouseMove);
+            this.label2.Click += new System.EventHandler(this.label1_Click);
+            this.label2.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
             // Welcome
             // 
@@ -191,15 +208,15 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "picture1";
             // 
-            // bDFilmDataSet2
+            // bDFilmDataSet
             // 
-            this.bDFilmDataSet2.DataSetName = "BDFilmDataSet2";
-            this.bDFilmDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.bDFilmDataSet.DataSetName = "BDFilmDataSet";
+            this.bDFilmDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // filmBindingSource
             // 
-            this.filmBindingSource.DataMember = "Film";
-            this.filmBindingSource.DataSource = this.bDFilmDataSet2;
+            this.filmBindingSource.DataSource = this.bDFilmDataSet;
+            this.filmBindingSource.Position = 0;
             // 
             // filmTableAdapter
             // 
@@ -210,7 +227,7 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.FilmTableAdapter = this.filmTableAdapter;
             this.tableAdapterManager.SessionTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Fil_mOK.BDFilmDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = Fil_mOK.BDFilmDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsersTableAdapter = null;
             // 
             // panel2
@@ -266,7 +283,11 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(36, 15);
             this.label7.TabIndex = 2;
+            this.label7.Tag = "time";
             this.label7.Text = "20:15";
+            this.label7.Click += new System.EventHandler(this.label1_Click);
+            this.label7.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
+            this.label7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
             // panel3
             // 
@@ -322,7 +343,11 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(36, 15);
             this.label11.TabIndex = 2;
+            this.label11.Tag = "time";
             this.label11.Text = "12:00";
+            this.label11.Click += new System.EventHandler(this.label1_Click);
+            this.label11.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
+            this.label11.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
             // label12
             // 
@@ -333,7 +358,11 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(36, 15);
             this.label12.TabIndex = 3;
+            this.label12.Tag = "time";
             this.label12.Text = "18:10";
+            this.label12.Click += new System.EventHandler(this.label1_Click);
+            this.label12.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
+            this.label12.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
             // panel4
             // 
@@ -389,7 +418,11 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(36, 15);
             this.label15.TabIndex = 2;
+            this.label15.Tag = "time";
             this.label15.Text = "10:00";
+            this.label15.Click += new System.EventHandler(this.label1_Click);
+            this.label15.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
+            this.label15.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
             // label16
             // 
@@ -400,7 +433,11 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(36, 15);
             this.label16.TabIndex = 3;
+            this.label16.Tag = "time";
             this.label16.Text = "16:30";
+            this.label16.Click += new System.EventHandler(this.label1_Click);
+            this.label16.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
+            this.label16.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
             // Form2
             // 
@@ -408,7 +445,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(357, 368);
+            this.ClientSize = new System.Drawing.Size(381, 368);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -427,7 +464,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDFilmDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDFilmDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.filmBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -455,10 +492,10 @@
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private BDFilmDataSet2 bDFilmDataSet2;
+        private BDFilmDataSet bDFilmDataSet;
         private System.Windows.Forms.BindingSource filmBindingSource;
-        private BDFilmDataSet2TableAdapters.FilmTableAdapter filmTableAdapter;
-        private BDFilmDataSet2TableAdapters.TableAdapterManager tableAdapterManager;
+        private BDFilmDataSetTableAdapters.FilmTableAdapter filmTableAdapter;
+        private BDFilmDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -476,5 +513,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         public System.Windows.Forms.Label label15;
         public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;
     }
 }
