@@ -31,13 +31,13 @@ namespace Fil_mOK
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = Bitmap.FromFile("doctor.jpg");
+            pictureBox1.Image = Bitmap.FromFile(filmTableAdapter.GetData().FindById(1).FPoster);
             label4.Text = filmTableAdapter.GetData().FindById(1).FDiscription;
-            pictureBox2.Image = Bitmap.FromFile("forsazh.jpg");
+            pictureBox2.Image = Bitmap.FromFile(filmTableAdapter.GetData().FindById(2).FPoster);
             label5.Text = filmTableAdapter.GetData().FindById(2).FDiscription;
-            pictureBox3.Image = Bitmap.FromFile("passangers.jpg");
+            pictureBox3.Image = Bitmap.FromFile(filmTableAdapter.GetData().FindById(3).FPoster);
             label9.Text = filmTableAdapter.GetData().FindById(3).FDiscription;
-            pictureBox4.Image = Bitmap.FromFile("elki.jpg");
+            pictureBox4.Image = Bitmap.FromFile(filmTableAdapter.GetData().FindById(4).FPoster);
             label13.Text = filmTableAdapter.GetData().FindById(4).FDiscription;            
         }
 
@@ -69,9 +69,12 @@ namespace Fil_mOK
                 {
                     foreach (var label in (cntrl as Panel).Controls)
                     {
-                        if ((label is Label) )
+                        if ((label is Label)&&((label as Label).Tag != null))
                         {
-                            (label as Label).Enabled = false;
+                            if ((label as Label).Tag.ToString().Equals("time"))
+                            {
+                                (label as Label).Enabled = false;
+                            }
                         }
                     }
                 }
