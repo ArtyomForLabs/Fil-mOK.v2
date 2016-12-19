@@ -62,7 +62,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.Location = new System.Drawing.Point(12, 272);
+            this.button1.Location = new System.Drawing.Point(373, 365);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 23);
             this.button1.TabIndex = 0;
@@ -119,7 +119,7 @@
             this.sessionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.sessionBindingNavigator.Name = "sessionBindingNavigator";
             this.sessionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.sessionBindingNavigator.Size = new System.Drawing.Size(514, 25);
+            this.sessionBindingNavigator.Size = new System.Drawing.Size(765, 25);
             this.sessionBindingNavigator.TabIndex = 3;
             this.sessionBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -225,7 +225,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.sessionDataGridView.DataSource = this.sessionBindingSource;
-            this.sessionDataGridView.Location = new System.Drawing.Point(214, 28);
+            this.sessionDataGridView.Location = new System.Drawing.Point(453, 28);
             this.sessionDataGridView.Name = "sessionDataGridView";
             this.sessionDataGridView.Size = new System.Drawing.Size(300, 220);
             this.sessionDataGridView.TabIndex = 4;
@@ -246,7 +246,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 310);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(765, 400);
             this.Controls.Add(this.sessionDataGridView);
             this.Controls.Add(this.sessionBindingNavigator);
             this.Controls.Add(this.button1);

@@ -15,6 +15,7 @@ namespace Fil_mOK
         public string time = null;
         public List<String> listb = new List<string>();
         public Button[] bt;
+        private int[,] seats;
         public room()
         {
             InitializeComponent();
@@ -30,23 +31,34 @@ namespace Fil_mOK
         {
             this.sessionTableAdapter.Fill(this.bDFilmDataSet.Session);
             int x = 30, y = 30,w=30,h=30,dx=5,dy=5;
-            bt = new Button[9];
-                for (int k = 1, i=0; k <= 3; k++)
+            bt = new Button[406];
+            seats = new int[,] {{17,17,17,25,27,27,29,31,33,33,33,17,16,16,16,16,16,20},
+                                {292,292,292,152,117,117,82,47,12,12,12,292,308,308,308,308,308,238}};
+            for (int r = 0, i =0, tag=1; r < 18; r++)
+            {
+                for (int j = 0; j < seats[0, r]; j++)
                 {
-                    for (int j = 1; j <= 3; j++)
-                    {
-                        bt[i] = new Button();
-                        bt[i].Text = (i + 1).ToString();
-                        bt[i].Tag = i + 1;
-                        bt[i].Width = w;
-                        bt[i].Height = h;
-                        bt[i].Click+=new EventHandler(addseat);
-                        bt[i].Location = new Point(j * x + dx, k * y + dy);
-                        this.Controls.Add(bt[i++]);
-                    }
-                }            
+                    bt[i] = new Button();
+                    bt[i].Text = (j + 1).ToString();
+                    bt[i].Tag = tag++;
+                    bt[i].Width = w;
+                    bt[i].Height = h;
+                    bt[i].Click += new EventHandler(addseat);
+                    bt[i].Location = new Point(j * (dx+w) + seats[1,r]+x, r *(h + dy)+y);
+                    this.Controls.Add(bt[i++]);
+                }
+                Label l = new Label();
+                l.Text = (r + 1).ToString();
+                l.Location = new Point(seats[1, r] + x - w, r * (h + dy) + y + 10);
+                this.Controls.Add(l);
+                Label l1 = new Label();
+                l1.Text = (r + 1).ToString();
+                l1.Location = new Point(seats[0, r]*(dx + w) + seats[1, r] + x + dx, r * (h + dy) + y + 10);
+                this.Controls.Add(l1);
+ 
+            }           
             BDFilmDataSet.SessionDataTable dt = this.sessionTableAdapter.GetDataByTime(time);
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 406; i++)
             {
                     if (dt.FindByTimeSeat(TimeSpan.Parse(time),Int32.Parse(bt[i].Tag.ToString()))!=null)
                     {
