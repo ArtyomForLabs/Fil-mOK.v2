@@ -44,7 +44,8 @@ namespace Fil_mOK
         public void label1_Click(object sender, EventArgs e)
         {
             room f4 = new room(sender,e);
-            f4.ShowDialog();
+            this.Hide();
+            f4.ShowDialog(this);
         }
 
         private void label1_MouseMove(object sender, MouseEventArgs e)

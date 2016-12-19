@@ -87,12 +87,26 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Пароль";
             // 
+            // email
+            // 
+            this.email.Location = new System.Drawing.Point(0, 0);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(100, 23);
+            this.email.TabIndex = 0;
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(117, 33);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(110, 20);
             this.textBox1.TabIndex = 2;
+            // 
+            // mail
+            // 
+            this.mail.Location = new System.Drawing.Point(0, 0);
+            this.mail.Name = "mail";
+            this.mail.Size = new System.Drawing.Size(100, 20);
+            this.mail.TabIndex = 0;
             // 
             // button1
             // 
@@ -104,13 +118,21 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // reg
+            // 
+            this.reg.Location = new System.Drawing.Point(0, 0);
+            this.reg.Name = "reg";
+            this.reg.Size = new System.Drawing.Size(75, 23);
+            this.reg.TabIndex = 0;
+            this.reg.Click += new System.EventHandler(this.registration);
+            // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.maskedTextBox1.Location = new System.Drawing.Point(117, 72);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.PasswordChar = '*';
-            this.maskedTextBox1.Size = new System.Drawing.Size(110, 20);
+            this.maskedTextBox1.Size = new System.Drawing.Size(110, 23);
             this.maskedTextBox1.TabIndex = 3;
             // 
             // bDFilmDataSet
@@ -319,10 +341,6 @@
             this.linkLabel1.Text = "Зарегистрироваться";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // reg
-            //
-            reg.Click += new System.EventHandler(this.registration);
-            //
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

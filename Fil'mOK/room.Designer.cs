@@ -119,7 +119,7 @@
             this.sessionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.sessionBindingNavigator.Name = "sessionBindingNavigator";
             this.sessionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.sessionBindingNavigator.Size = new System.Drawing.Size(765, 25);
+            this.sessionBindingNavigator.Size = new System.Drawing.Size(782, 25);
             this.sessionBindingNavigator.TabIndex = 3;
             this.sessionBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -247,12 +247,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(765, 400);
+            this.ClientSize = new System.Drawing.Size(782, 434);
             this.Controls.Add(this.sessionDataGridView);
             this.Controls.Add(this.sessionBindingNavigator);
             this.Controls.Add(this.button1);
             this.Name = "room";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "room";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.room_FormClosed);
             this.Load += new System.EventHandler(this.room_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bDFilmDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionBindingSource)).EndInit();

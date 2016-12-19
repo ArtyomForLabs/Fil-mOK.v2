@@ -56,7 +56,8 @@ namespace Fil_mOK
                 l1.Location = new Point(seats[0, r]*(dx + w) + seats[1, r] + x + dx, r * (h + dy) + y + 10);
                 this.Controls.Add(l1);
  
-            }           
+            }
+            this.button1.Location = new Point(10, bt[405].Location.Y+2*h);
             BDFilmDataSet.SessionDataTable dt = this.sessionTableAdapter.GetDataByTime(time);
             for (int i = 0; i < 406; i++)
             {
@@ -114,6 +115,11 @@ namespace Fil_mOK
             {
                 MessageBox.Show("Вы не выбрали место в зале!");
             }
+        }
+
+        private void room_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Owner.Show();
         }
     }
 }
