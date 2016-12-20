@@ -57,7 +57,7 @@ namespace Fil_mOK
                 this.Controls.Add(l1);
  
             }
-            this.button1.Location = new Point(10, bt[405].Location.Y+2*h);
+            this.button1.Location = new Point(10, bt[405].Location.Y-2*h);
             BDFilmDataSet.SessionDataTable dt = this.sessionTableAdapter.GetDataByTime(time);
             for (int i = 0; i < 406; i++)
             {

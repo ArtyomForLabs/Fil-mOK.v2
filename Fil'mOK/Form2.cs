@@ -50,12 +50,12 @@ namespace Fil_mOK
 
         private void label1_MouseMove(object sender, MouseEventArgs e)
         {
-            (sender as Label).BackColor = Color.LightGray;
+            (sender as Label).BackColor = Color.SteelBlue;//Color.FromName("Control");
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
-            (sender as Label).BackColor = this.BackColor;
+            (sender as Label).BackColor = Color.Transparent;
         }
 
         private void ‚˚ÈÚËToolStripMenuItem_Click(object sender, EventArgs e)
