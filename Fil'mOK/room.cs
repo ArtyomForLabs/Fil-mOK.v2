@@ -30,7 +30,7 @@ namespace Fil_mOK
         public void room_Load(object sender, EventArgs e)
         {
             this.sessionTableAdapter.Fill(this.bDFilmDataSet.Session);
-            int x = 30, y = 30,w=30,h=30,dx=5,dy=5;
+            int x = 30, y = 30,w=30,h=30,dx=2,dy=2;
             bt = new Button[406];
             seats = new int[,] {{17,17,17,25,27,27,29,31,33,33,33,17,16,16,16,16,16,20},
                                 {292,292,292,152,117,117,82,47,12,12,12,292,308,308,308,308,308,238}};
@@ -57,7 +57,7 @@ namespace Fil_mOK
                 this.Controls.Add(l1);
  
             }
-            this.button1.Location = new Point(10, bt[405].Location.Y-2*h);
+            this.button1.Location = new Point(bt[391].Location.X, bt[405].Location.Y+h+dy);
             BDFilmDataSet.SessionDataTable dt = this.sessionTableAdapter.GetDataByTime(time);
             for (int i = 0; i < 406; i++)
             {

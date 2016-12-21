@@ -83,6 +83,7 @@
             this.Name = "room";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "room";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.room_FormClosed);
             this.Load += new System.EventHandler(this.room_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bDFilmDataSet)).EndInit();

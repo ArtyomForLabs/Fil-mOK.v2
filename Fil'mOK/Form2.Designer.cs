@@ -92,8 +92,10 @@
             // войтиToolStripMenuItem
             // 
             this.войтиToolStripMenuItem.BackColor = System.Drawing.Color.SteelBlue;
+            this.войтиToolStripMenuItem.Image = global::Fil_mOK.Properties.Resources.спутник1;
+            this.войтиToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.войтиToolStripMenuItem.Name = "войтиToolStripMenuItem";
-            this.войтиToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.войтиToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.войтиToolStripMenuItem.Text = "Войти";
             this.войтиToolStripMenuItem.Click += new System.EventHandler(this.войтиToolStripMenuItem_Click);
             // 
