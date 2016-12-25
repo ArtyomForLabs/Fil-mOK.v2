@@ -31,14 +31,45 @@ namespace Fil_mOK
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = Bitmap.FromFile(filmTableAdapter.GetData().FindById(1).FPoster);
+            //ToolTip t = new ToolTip();
+            //t.SetToolTip(toolStripMenuItem1, "Справка");
+            int i = 4, j = 4, k = 4;
+            foreach (var cntrl in this.Controls)
+            {
+                if (cntrl is Panel)
+                {
+                    foreach (var label in (cntrl as Panel).Controls)
+                    {
+                        if ((label is PictureBox) && ((label as PictureBox).Tag != null))
+                        {
+                            if ((label as PictureBox).Tag.ToString().Equals("picture"))
+                            {
+                                (label as PictureBox).Image = Bitmap.FromFile(filmTableAdapter.GetData().FindById(j--).FPoster);
+                            }
+                        }
+                        if ((label is Label) && ((label as Label).Tag != null))
+                        {
+                            if ((label as Label).Tag.ToString().Equals("discription"))
+                            {
+                                (label as Label).Text = filmTableAdapter.GetData().FindById(i--).FDiscription;
+                            }
+                            if ((label as Label).Tag.ToString().Equals("name"))
+                            {
+                                (label as Label).Text = filmTableAdapter.GetData().FindById(k--).FName;
+                            }
+                        }
+                    }
+                }
+            }
+           /* pictureBox1.Image = Bitmap.FromFile(filmTableAdapter.GetData().FindById(1).FPoster);
             label4.Text = filmTableAdapter.GetData().FindById(1).FDiscription;
             pictureBox2.Image = Bitmap.FromFile(filmTableAdapter.GetData().FindById(2).FPoster);
             label5.Text = filmTableAdapter.GetData().FindById(2).FDiscription;
             pictureBox3.Image = Bitmap.FromFile(filmTableAdapter.GetData().FindById(3).FPoster);
             label9.Text = filmTableAdapter.GetData().FindById(3).FDiscription;
             pictureBox4.Image = Bitmap.FromFile(filmTableAdapter.GetData().FindById(4).FPoster);
-            label13.Text = filmTableAdapter.GetData().FindById(4).FDiscription;            
+            label13.Text = filmTableAdapter.GetData().FindById(4).FDiscription;
+            */
         }
 
         public void label1_Click(object sender, EventArgs e)
@@ -50,7 +81,7 @@ namespace Fil_mOK
 
         private void label1_MouseMove(object sender, MouseEventArgs e)
         {
-            (sender as Label).BackColor = Color.SteelBlue;//Color.FromName("Control");
+            (sender as Label).BackColor = Color.SteelBlue;
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
@@ -80,6 +111,11 @@ namespace Fil_mOK
                     }
                 }
             }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("E:\\МИЭТ\\8140147\\5ый семестр\\Программирование ПО\\ТЗ.docx");
         }
     }
 }

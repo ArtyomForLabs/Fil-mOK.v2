@@ -30,10 +30,13 @@ namespace Fil_mOK
         public void room_Load(object sender, EventArgs e)
         {
             this.sessionTableAdapter.Fill(this.bDFilmDataSet.Session);
-            int x = 30, y = 30,w=30,h=30,dx=2,dy=2;
+            int x = 50, y = 100, w=30, h=25, dx=3, dy=3, xstart = 20;
             bt = new Button[406];
             seats = new int[,] {{17,17,17,25,27,27,29,31,33,33,33,17,16,16,16,16,16,20},
-                                {292,292,292,152,117,117,82,47,12,12,12,292,308,308,308,308,308,238}};
+                                {8*(w+dx)+xstart,8*(w+dx)+xstart,8*(w+dx)+xstart,4*(w+dx)+xstart,3*(w+dx)+xstart,
+                                 3*(w+dx)+xstart,2*(w+dx)+xstart,(w+dx)+xstart,xstart,xstart,xstart,
+                                 8*(w+dx)+xstart,8*(w+dx)+xstart+15,8*(w+dx)+xstart+15,8*(w+dx)+xstart+15,
+                                 8*(w+dx)+xstart+15,8*(w+dx)+xstart+15,6*(w+dx)+xstart+15}};
             for (int r = 0, i =0, tag=1; r < 18; r++)
             {
                 for (int j = 0; j < seats[0, r]; j++)
@@ -48,16 +51,38 @@ namespace Fil_mOK
                     this.Controls.Add(bt[i++]);
                 }
                 Label l = new Label();
+                l.AutoSize = true;
+                l.TextAlign = ContentAlignment.TopRight;
                 l.Text = (r + 1).ToString();
-                l.Location = new Point(seats[1, r] + x - w, r * (h + dy) + y + 10);
+                l.Location = new Point(seats[1, r] + x - (w + dx), r * (h + dy) + y + h/3);
                 this.Controls.Add(l);
                 Label l1 = new Label();
+                l1.AutoSize = true;
                 l1.Text = (r + 1).ToString();
-                l1.Location = new Point(seats[0, r]*(dx + w) + seats[1, r] + x + dx, r * (h + dy) + y + 10);
+                l1.Location = new Point(seats[0, r]*(dx + w) + seats[1, r] + x + dx, r * (h + dy) + y + h/3);
                 this.Controls.Add(l1);
  
             }
-            this.button1.Location = new Point(bt[391].Location.X, bt[405].Location.Y+h+dy);
+            this.button1.Location = new Point(bt[393].Location.X, bt[393].Location.Y+2*(h+dy));
+            this.button1.Width = bt[401].Location.X - bt[395].Location.X;
+            Label screen = new Label();
+            screen.Text = "";
+            screen.Width = 33*(w+dx);
+            screen.Height = 15;
+            screen.BackColor = Color.DimGray;
+            screen.Location = new Point(xstart+x, 20);
+            screen.Enabled = false;
+            Label screenName = new Label();
+            screenName.AutoSize = true;
+            screenName.Text = "Экран";
+            screenName.Location = new Point(screen.Location.X-40, screen.Location.Y);
+            Label screenName2 = new Label();
+            screenName2.AutoSize = true;
+            screenName2.Text = "Экран";
+            screenName2.Location = new Point(screen.Location.X+screen.Width+dx, screen.Location.Y);
+            this.Controls.Add(screen);
+            this.Controls.Add(screenName);
+            this.Controls.Add(screenName2);
             BDFilmDataSet.SessionDataTable dt = this.sessionTableAdapter.GetDataByTime(time);
             for (int i = 0; i < 406; i++)
             {
