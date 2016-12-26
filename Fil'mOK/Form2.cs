@@ -25,14 +25,11 @@ namespace Fil_mOK
 
         public void редакторToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1();
-            f1.ShowDialog();
+            
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            //ToolTip t = new ToolTip();
-            //t.SetToolTip(toolStripMenuItem1, "Справка");
             int i = 4, j = 4, k = 4;
             foreach (var cntrl in this.Controls)
             {
@@ -115,8 +112,19 @@ namespace Fil_mOK
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(System.IO.Path.GetFileName( "KPO_RUKOVODSTVO.docx"));//"E:\\МИЭТ\\8140147\\5ый семестр\\Программирование ПО\\KPO_RUKOVODSTVO.docx");
-            
+            System.Diagnostics.Process.Start(System.IO.Path.GetFileName("KPO_RUKOVODSTVO.docx"));//"E:\\МИЭТ\\8140147\\5ый семестр\\Программирование ПО\\KPO_RUKOVODSTVO.docx");
+        }
+
+        private void общуюИнформациюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1();
+            f1.ShowDialog();
+        }
+
+        private void броньToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Booking b = new Booking();
+            b.Show();
         }
     }
 }
