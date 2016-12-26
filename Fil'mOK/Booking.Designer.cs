@@ -235,7 +235,7 @@
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.Image = global::Fil_mOK.Properties.Resources.update;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
@@ -250,6 +250,7 @@
             this.Controls.Add(this.sessionDataGridView);
             this.Controls.Add(this.sessionBindingNavigator);
             this.Name = "Booking";
+            this.ShowIcon = false;
             this.Text = "База данных сеансов";
             this.Load += new System.EventHandler(this.Booking_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bDFilmDataSet)).EndInit();

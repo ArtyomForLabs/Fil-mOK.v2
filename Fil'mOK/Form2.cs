@@ -13,6 +13,7 @@ namespace Fil_mOK
 {
     public partial class Form2 : Form
     {
+        int ssize = 0;
         public Form2()
         {
             InitializeComponent();
@@ -125,6 +126,18 @@ namespace Fil_mOK
         {
             Booking b = new Booking();
             b.Show();
+        }
+
+        private void label4_MouseHover(object sender, EventArgs e)
+        {
+            ssize = (sender as Label).Size.Height;
+            (sender as Label).Size = new Size((sender as Label).Size.Width, (sender as Label).Size.Height + (sender as Label).Text.Length);
+            
+        }
+
+        private void label4_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as Label).Size = new Size((sender as Label).Size.Width, ssize);
         }
     }
 }

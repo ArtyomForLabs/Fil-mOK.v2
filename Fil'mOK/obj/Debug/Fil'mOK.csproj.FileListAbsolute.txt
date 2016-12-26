@@ -51,5 +51,5 @@ E:\МИЭТ\8140147\5ый семестр\Программирование ПО\f
 E:\МИЭТ\8140147\5ый семестр\Программирование ПО\filmtemp\Fil'mOK\obj\Debug\Fil_mOK.Properties.Resources.resources
 E:\МИЭТ\8140147\5ый семестр\Программирование ПО\filmtemp\Fil'mOK\obj\Debug\Fil_mOK.room.resources
 E:\МИЭТ\8140147\5ый семестр\Программирование ПО\filmtemp\Fil'mOK\obj\Debug\Fil'mOK.csproj.GenerateResource.Cache
-E:\МИЭТ\8140147\5ый семестр\Программирование ПО\filmtemp\Fil'mOK\obj\Debug\Fil'mOK.csprojResolveAssemblyReference.cache
 E:\МИЭТ\8140147\5ый семестр\Программирование ПО\filmtemp\Fil'mOK\obj\Debug\Fil_mOK.Booking.resources
+E:\МИЭТ\8140147\5ый семестр\Программирование ПО\filmtemp\Fil'mOK\obj\Debug\Fil'mOK.csprojResolveAssemblyReference.cache

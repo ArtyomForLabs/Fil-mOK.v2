@@ -153,6 +153,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>BDFilm.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\update.png" />
     <None Include="Resources\doctor.jpg" />
     <None Include="Resources\KPO_RUKOVODSTVO.docx" />
     <None Include="Resources\Тонкое заполняюееся кольцо.gif" />

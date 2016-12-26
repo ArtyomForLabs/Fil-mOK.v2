@@ -28,7 +28,6 @@ namespace Fil_mOK
         private void Booking_Load(object sender, EventArgs e)
         {
             this.sessionTableAdapter.Fill(this.bDFilmDataSet.Session);
-
         }
     }
 }
