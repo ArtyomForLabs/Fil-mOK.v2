@@ -115,7 +115,8 @@ namespace Fil_mOK
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("E:\\МИЭТ\\8140147\\5ый семестр\\Программирование ПО\\ТЗ.docx");
+            System.Diagnostics.Process.Start(System.IO.Path.GetFileName( "KPO_RUKOVODSTVO.docx"));//"E:\\МИЭТ\\8140147\\5ый семестр\\Программирование ПО\\KPO_RUKOVODSTVO.docx");
+            
         }
     }
 }

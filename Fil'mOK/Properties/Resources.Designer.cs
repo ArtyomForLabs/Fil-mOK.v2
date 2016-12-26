@@ -71,6 +71,16 @@ namespace Fil_mOK.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] KPO_RUKOVODSTVO {
+            get {
+                object obj = ResourceManager.GetObject("KPO_RUKOVODSTVO", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap спутник {
@@ -95,7 +105,7 @@ namespace Fil_mOK.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Тонкое_заполняюееся_кольцо {
             get {
-                object obj = ResourceManager.GetObject("Тонкое заполняюееся кольцо", resourceCulture);
+                object obj = ResourceManager.GetObject("Тонкое_заполняюееся_кольцо", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -145,6 +145,7 @@
       <DependentUpon>BDFilm.mdf</DependentUpon>
     </Content>
     <None Include="Resources\doctor.jpg" />
+    <None Include="Resources\KPO_RUKOVODSTVO.docx" />
     <None Include="Resources\Тонкое заполняюееся кольцо.gif" />
     <None Include="Resources\спутник.png" />
     <None Include="Resources\спутник.jpg" />
